@@ -1,0 +1,2 @@
+gfur-activate-template
+======================
