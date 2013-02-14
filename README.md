@@ -1,5 +1,6 @@
 Gravity Forms User Registration Activate Template
 =================================================
+**[Full Walk-through on Gravity Wiz](http://gravitywiz.com/2013/02/13/customizing-gravity-forms-user-registration-activation-page)**
 
 These files are intended to be added to your WordPress theme and loaded in place of the default Gravity Forms User Registration activate.php template.
 
