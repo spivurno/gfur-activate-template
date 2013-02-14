@@ -20,13 +20,19 @@ Additionally, the core activate.php template has been reconfigured as a class. F
 add_action('wp', 'custom_maybe_activate_user', 9);
 function custom_maybe_activate_user() {
 
-  $template_path = STYLESHEETPATH . '/gfur-activate-template/activate.php';
+    $template_path = STYLESHEETPATH . '/gfur-activate-template/activate.php';
 
-	if(!file_exists($template_path) || rgget('page') != 'gf_activation')
-		return;
+    if(!file_exists($template_path) || rgget('page') != 'gf_activation')
+	    return;
 
-	require_once($template_path);
+    require_once($template_path);
 
-	exit();
+    exit();
 }
 ```
+
+### More Information
+
+Read the full walk-through here: 
+
+http://gravitywiz.com/2013/02/13/customizing-gravity-forms-user-registration-activation-page
