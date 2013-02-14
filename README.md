@@ -33,6 +33,4 @@ function custom_maybe_activate_user() {
 
 ### More Information
 
-Read the full walk-through here: 
-
-**[Full Walk-through on Gravity Wiz](http://gravitywiz.com/2013/02/13/customizing-gravity-forms-user-registration-activation-page)**
+Read the full walk-through here: **[Full Walk-through on Gravity Wiz](http://gravitywiz.com/2013/02/13/customizing-gravity-forms-user-registration-activation-page)**
