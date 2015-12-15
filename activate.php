@@ -23,8 +23,15 @@ class GWActivateTemplate {
     }
 
     function load_gfur_signup_functionality() {
+
+        if( function_exists( 'gf_user_registration' ) ) {
+            $signups = gf_user_registration()->get_base_path() . '/includes/signups.php';
+        } else {
+            $signups = GFUser::get_base_path() . '/includes/signups.php';
+        }
+
         // include GF User Registration functionality
-        require_once(GFUser::get_base_path() . '/includes/signups.php');
+        require_once( $signups );
         GFUserSignups::prep_signups_functionality();
     }
 
