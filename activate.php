@@ -37,7 +37,7 @@ class GWActivateTemplate {
 
     function hooks() {
 
-        add_action('body_class', create_function('$classes', '$classes[] = "gfur-activate"; return $classes;'));
+        add_action('body_class', function( $classes ) { $classes[] = 'gfur-activate'; return $classes; } );
 
     }
 
@@ -128,5 +128,3 @@ class GWActivateTemplate {
     }
 
 }
-
-?>
