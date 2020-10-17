@@ -11,9 +11,12 @@ class GWActivateTemplate {
 
     function __construct( $args = array() ) {
 
+		/**
+		 * @var $template_folder
+		 */
         extract( wp_parse_args( $args, array(
             'template_folder' => basename( dirname( __file__ ) )
-            ) ) );
+		) ) );
 
         $this->template_folder = $template_folder;
 
@@ -58,16 +61,24 @@ class GWActivateTemplate {
     }
 
     function has_activation_key() {
-        return !empty($_GET['key']) || !empty($_POST['key']);
+        return ! empty( $_GET['key'] )
+			|| ( isset( $_GET['gfur_activation' ] ) && ! empty( $_GET['gfur_activation' ] ) )
+			|| ! empty( $_POST['key'] );
     }
 
     function get_activation_key() {
 
-        if( isset( $_GET['key'] ) && $_GET['key'] )
-            return $_GET['key'];
+        if ( isset( $_GET['key'] ) && $_GET['key'] ) {
+			return $_GET['key'];
+		}
 
-        if( isset( $_POST['key'] ) && $_POST['key'] )
-            return $_POST['key'];
+		if ( isset( $_GET['gfur_activation'] ) && $_GET['gfur_activation'] ) {
+			return $_GET['gfur_activation'];
+		}
+
+        if ( isset( $_POST['key'] ) && $_POST['key'] ) {
+			return $_POST['key'];
+		}
 
         return false;
     }
