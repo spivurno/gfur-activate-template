@@ -9,13 +9,16 @@ $gw_activate_template->template();
 
 class GWActivateTemplate {
 
+    public $template_folder; 
+    public $result;
+	
     function __construct( $args = array() ) {
 
 		/**
 		 * @var $template_folder
 		 */
         extract( wp_parse_args( $args, array(
-            'template_folder' => basename( dirname( __file__ ) )
+            'template_folder' => basename( dirname( __FILE__ ) )
 		) ) );
 
         $this->template_folder = $template_folder;
